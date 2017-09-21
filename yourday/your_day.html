@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    body
+    {
+    	font-family: "Montserrat", sans-serif
+    }
+    h1
+    {
+    	color: green;
+    }
+    #wrapper
+    {
+    	position: absolute;
+    	left: 40%;
+    	width: 500px;
+    }
+    .field{
+    	display: block;
+    	padding: 10px;
+    }
+    .long-label
+    {
+    	display: block;
+    }
+    input[type="text"] 
+    {
+      width: 300px;
+    }
+    textarea
+    {
+    	width: 300px;
+    }
+    .error
+    {
+      font-size: 10px;
+      color: green;
+    }
+    </style>
+
+<meta charset="utf-8"> 
+<title>How Was Your Day?</title>
+</head>
+<body>
+<div id="wrapper">
+<h1>How Was Your Day?</h1>
+<form action="form_submit.php" method="POST" class="form">
+	<div class="field">
+	<label class="long-label">Name</label>
+	<input type="text" name="name" class="required">
+    </div>
+
+	<div class="field">
+	<label class="long-label">Sex </label> 
+	<label>Male</label><input type="radio" value="Male" name="sex" class="radio-required">
+	<label>Female</label><input type="radio" value="Female" name="sex" class="radio-required">
+    </div>
+
+	<div class="field">
+	<label class="long-label">Did you wake up happy?</label>
+	<label>Yes</label>
+	<input type="radio" value="Yes" name="q1" class="radio-required">
+	<label>No</label><input type="radio" value="No" name="q1" class="radio-required">
+    </div>
+
+	<div class="field">
+	<label class="long-label">How many classes did you have today?</label>
+	<input type="text" name="q2" class="required number-only">
+    </div>
+
+    <div class="field">
+    <label class="long-label">What was the best thing that happened to you today?</label>
+    <textarea id="experience" name="q3" class="required"></textarea>
+    </div>
+
+    <div class="field">
+    <input type="submit" id="submitButton" onclick="notify()" disabled="true">
+    </div>
+    <!-- do onsubmit -->
+ </form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    
+</script>
+<script src="js/scripts.js"></script>	
+</body>
+</html>
